@@ -718,3 +718,15 @@ footer a {
     padding-right: 0.8rem;
   }
 }
+
+/* Subpage logo wraps to two lines on phones; reserve both lines */
+@media (max-width: 599px) {
+  .logo-link .logo-text {
+    height: 6.8rem;
+  }
+}
+
+/* Center the contact card within the page */
+.contact-container {
+  margin: 0 auto;
+}
