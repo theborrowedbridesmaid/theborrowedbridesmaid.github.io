@@ -11,7 +11,7 @@
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta name="theme-color" content="#B57BC6">
+  <meta name="theme-color" content="#6D3B5F">
 
   <!-- Social sharing -->
   <meta property="og:type" content="website">
@@ -28,13 +28,16 @@
   <meta name="twitter:description" content="Thoughtful wedding planning and seamless day-of coordination in Scranton, Wilkes-Barre, the Poconos and across Northeast Pennsylvania.">
   <meta name="twitter:image" content="https://theborrowedbridesmaid.org/og-image.jpg">
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap"></noscript>
+  <!-- Fonts (self-hosted) -->
+  <link rel="preload" href="/fonts/playfair-display-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/lora-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/great-vibes-latin.woff2" as="font" type="font/woff2" crossorigin>
 
+  <link rel="preload" as="image" type="image/webp" media="(max-width: 767px)" imagesrcset="/hero-arch-480.webp 480w, /hero-arch-600.webp 600w" imagesizes="100vw" fetchpriority="high">
+  <link rel="preload" as="image" type="image/webp" media="(min-width: 768px)" imagesrcset="/hero-arch-800.webp 800w, /hero-arch-1200.webp 1200w" imagesizes="100vw" fetchpriority="high">
+  <script>document.documentElement.classList.add('js')</script>
   <link rel="stylesheet" href="/styles.css">
+  <script src="/site.js" defer></script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -191,43 +194,133 @@
 </head>
 <body>
   <div class="page-wrap">
-    <main>
-      <!-- HERO / LANDING -->
-      <header class="hero" id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a class="brand" href="#top">The Borrowed Bridesmaid</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">&#9776;</button>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="#packages">Packages</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="/nepa-wedding-venues/">Venue Guide</a></li>
+          <li><a class="nav-cta" href="#contact">Inquire</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+    <main id="main">
+      <!-- HERO -->
+      <section class="hero-photo" data-hide-cta>
+        <picture>
+          <source media="(max-width: 767px)" type="image/webp" srcset="/hero-arch-480.webp 480w, /hero-arch-600.webp 600w" sizes="100vw">
+          <source type="image/webp" srcset="/hero-arch-800.webp 800w, /hero-arch-1200.webp 1200w" sizes="100vw">
+          <img class="hero-img" src="/img6.jpg" width="1200" height="900" fetchpriority="high" decoding="async" alt="Round wooden moon-gate ceremony arch framed by ferns and woodland">
+        </picture>
+        <div class="hero-content">
+          <p class="hero-script">The Borrowed Bridesmaid</p>
+          <h1 class="hero-title">Wedding Planning &amp; Coordination in Scranton, Wilkes-Barre &amp; Northeast PA</h1>
+          <p class="hero-sub-line">By your side, on your day. Thoughtful planning and seamless day-of coordination, so you can be fully present.</p>
+          <a class="btn-primary btn-on-photo" href="#contact">Inquire About Your Date</a>
+        </div>
+      </section>
+
+      <!-- REVIEWS (featured) -->
+      <section id="reviews" class="reviews-top">
         <div class="container">
-          <div class="hero-inner">
-            <!-- Replace with your logo image if desired -->
-            <div class="logo">
-              <p class="logo-text">The Borrowed Bridesmaid</p>
-              <h1 class="hero-subbrand">Wedding Planning &amp; Coordination in Scranton, Wilkes-Barre &amp; Northeast PA</h1>
-            </div>
-
-            <div class="hero-text">
-              <h2 class="hero-heading">By Your Side, On Your Day</h2>
-              <p>
-                Your wedding should feel like a celebration of you and your partner, surrounded by the people you love most&mdash;not a day you spend managing a timeline.
-                At The Borrowed Bridesmaid, we provide thoughtful planning and seamless day-of coordination so your focus stays on your love, your loved ones, and the moment you say &ldquo;I do.&rdquo;
-              </p>
-            </div>
-
-            <nav class="hero-nav">
-              <a href="#packages" class="hero-button">Packages</a>
-              <a href="#gallery" class="hero-button">Gallery</a>
-              <a href="#about" class="hero-button">About</a>
-              <a href="#reviews" class="hero-button">Reviews</a>
-              <a href="#faq" class="hero-button">FAQ</a>
-              <a href="#contact" class="hero-button">Contact</a>
-            </nav>
-            <p class="hero-cta">
-              <a class="btn-primary btn-light" href="#contact">Check Your Date</a>
-            </p>
+          <h2 class="section-title">Kind Words</h2>
+          <p class="rating-line"><span class="stars" aria-hidden="true">&#9733;&#9733;&#9733;&#9733;&#9733;</span>5-star reviews on <a href="https://www.theknot.com/marketplace/the-borrowed-bridesmaid-dallas-pa-2048463" target="_blank" rel="noopener noreferrer">The Knot</a> &amp; <a href="https://www.weddingwire.com/biz/the-borrowed-bridesmaid/c614060458a77a8a.html" target="_blank" rel="noopener noreferrer">WeddingWire</a></p>
+          <div class="reviews-grid">
+        <figure class="review-card">
+          <div class="review-stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>
+            <p>&ldquo;Danielle was absolutely wonderful to work with! She made my wedding day stress free and I&rsquo;m happy to say the day was a dream come true! I would recommend Danielle to anyone!&rdquo;</p>
+          </blockquote>
+          <figcaption>Micaela &middot; <a href="https://www.weddingwire.com/biz/the-borrowed-bridesmaid/c614060458a77a8a.html" target="_blank" rel="noopener noreferrer">WeddingWire</a></figcaption>
+        </figure>
+        <figure class="review-card">
+          <div class="review-stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>
+            <p>&ldquo;I can&rsquo;t begin to describe how grateful I am for Danielle and her organizational skills, especially on the day of our wedding! &hellip; Any time something even started to seem like it might go wrong, she was right there ready with a solution.&rdquo;</p>
+          </blockquote>
+          <figcaption>Emily &middot; <a href="https://www.weddingwire.com/biz/the-borrowed-bridesmaid/c614060458a77a8a.html" target="_blank" rel="noopener noreferrer">WeddingWire</a></figcaption>
+        </figure>
+        <figure class="review-card">
+          <div class="review-stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <blockquote>
+            <p>&ldquo;Danielle is the wedding coordinator of your dreams! She worked so hard to ensure that our wedding day went according to plan. &hellip; Professional and kind, Danielle is there for you as the couple to make your wedding day for you. We appreciated her services so much!&rdquo;</p>
+          </blockquote>
+          <figcaption>Kerryn R. &middot; <a href="https://www.theknot.com/marketplace/the-borrowed-bridesmaid-dallas-pa-2048463" target="_blank" rel="noopener noreferrer">The Knot</a></figcaption>
+        </figure>
           </div>
         </div>
-      </header>
+      </section>
 
-      <!-- PACKAGES SECTION -->
+      <!-- INTRO -->
+      <section class="intro section-alt">
+        <div class="container">
+          <h2 class="section-title">By Your Side, On Your Day</h2>
+          <p>
+            Your wedding should feel like a celebration of you and your partner, surrounded by the people you love most&mdash;not a day you spend managing a timeline.
+            At The Borrowed Bridesmaid, we provide thoughtful planning and seamless day-of coordination so your focus stays on your love, your loved ones, and the moment you say &ldquo;I do.&rdquo;
+          </p>
+        </div>
+      </section>
+
+      <!-- MEET DANIELLE -->
+      <section class="meet">
+        <div class="container">
+          <div class="meet-inner">
+            <div class="meet-photo">
+              <picture>
+                <source type="image/webp" srcset="/img8-480.webp 480w, /img8-800.webp 800w" sizes="(min-width: 768px) 288px, 224px">
+                <img src="/img8.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="Danielle, the wedding planner behind The Borrowed Bridesmaid, smiling on a wedding morning">
+              </picture>
+            </div>
+            <div class="meet-copy">
+              <h2>Hi, I&rsquo;m Danielle</h2>
+              <p>I&rsquo;m the planner behind The Borrowed Bridesmaid, based in Dallas, PA. I fell in love with planning while organizing my own wedding, and I&rsquo;m detail-obsessed in the best possible way.</p>
+              <p>I truly enjoy getting to know each couple&mdash;what matters most to you and how you want your day to feel&mdash;so you can wake up on your wedding day feeling calm, excited, and completely cared for.</p>
+              <a class="text-link" href="#about">Read my story</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- HOW IT WORKS -->
+      <section id="how-it-works" class="section-alt">
+        <div class="container">
+          <h2 class="section-title">How It Works</h2>
+          <p class="section-subtitle">Three simple steps from first hello to &ldquo;I do.&rdquo;</p>
+          <ol class="steps">
+            <li class="step">
+              <span class="step-num" aria-hidden="true">1</span>
+              <h3>A Free Call</h3>
+              <p>Email me your date, venue (or town) and guest count. We&rsquo;ll talk through your plans and what kind of support you need.</p>
+            </li>
+            <li class="step">
+              <span class="step-num" aria-hidden="true">2</span>
+              <h3>Your Custom Proposal</h3>
+              <p>I&rsquo;ll recommend the package that fits your celebration and send a proposal with the details for your day.</p>
+            </li>
+            <li class="step">
+              <span class="step-num" aria-hidden="true">3</span>
+              <h3>We Run the Day</h3>
+              <p>I manage the timeline, vendors and every detail, so you can be fully present with the people you love.</p>
+            </li>
+          </ol>
+          <p class="section-action"><a class="btn-primary" href="#contact">Inquire About Your Date</a></p>
+        </div>
+      </section>
+
+      <!-- PACKAGES -->
       <section id="packages">
   <div class="container">
+    <p class="eyebrow">Open pricing</p>
     <h2 class="section-title">Our Packages</h2>
     <p class="section-subtitle">
       From pre-wedding celebrations to full-service planning, choose the level of support that feels right for you.
@@ -315,73 +408,63 @@
   </div>
 </section>
 
-      <!-- GALLERY SECTION -->
-      <section id="gallery">
+      <!-- GALLERY -->
+      <section id="gallery" class="section-alt">
         <div class="container">
           <h2 class="section-title">Gallery</h2>
           <p class="section-subtitle">
             A glimpse into the celebrations I&rsquo;ve had the joy of planning and coordinating.
           </p>
-
           <div class="gallery-grid">
             <div class="gallery-item">
-    <picture>
-      <source type="image/webp" srcset="img2-800.webp 800w, img2.webp 1200w" sizes="(min-width: 768px) 340px, calc(100vw - 3rem)">
-      <img src="img2.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="Candlelit wedding cake table with a gold hand-painted cake, LOVE cake topper, vintage bride-and-groom figurine and greenery garland">
-    </picture>
-  </div>
+              <picture>
+                <source type="image/webp" srcset="/img2-480.webp 480w, /img2-800.webp 800w, /img2.webp 1200w" sizes="(min-width: 1120px) 357px, (min-width: 768px) 31vw, 46vw">
+                <img src="/img2.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="Candlelit wedding cake table with a gold hand-painted cake, LOVE cake topper, vintage bride-and-groom figurine and greenery garland">
+              </picture>
+            </div>
             <div class="gallery-item">
-    <picture>
-      <source type="image/webp" srcset="img3-800.webp 800w, img3.webp 1200w" sizes="(min-width: 768px) 340px, calc(100vw - 3rem)">
-      <img src="img3.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="Outdoor lawn ceremony with rows of wooden folding chairs under shade trees and a wooden pergola">
-    </picture>
-  </div>
+              <picture>
+                <source type="image/webp" srcset="/img3-480.webp 480w, /img3-800.webp 800w, /img3.webp 1200w" sizes="(min-width: 1120px) 357px, (min-width: 768px) 31vw, 46vw">
+                <img src="/img3.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="Outdoor lawn ceremony with rows of wooden folding chairs under shade trees and a wooden pergola">
+              </picture>
+            </div>
             <div class="gallery-item">
-    <picture>
-      <source type="image/webp" srcset="img4-800.webp 800w, img4.webp 1200w" sizes="(min-width: 768px) 340px, calc(100vw - 3rem)">
-      <img src="img4.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="Floral welcome sign with blush roses, amaranth and greenery at a summer outdoor ceremony">
-    </picture>
-  </div>
+              <picture>
+                <source type="image/webp" srcset="/img4-480.webp 480w, /img4-800.webp 800w, /img4.webp 1200w" sizes="(min-width: 1120px) 357px, (min-width: 768px) 31vw, 46vw">
+                <img src="/img4.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="Floral welcome sign with blush roses, amaranth and greenery at a summer outdoor ceremony">
+              </picture>
+            </div>
             <div class="gallery-item">
-    <picture>
-      <source type="image/webp" srcset="img5-800.webp 800w, img5.webp 1200w" sizes="(min-width: 768px) 340px, calc(100vw - 3rem)">
-      <img src="img5.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="Rustic barn reception with a table of cake-pop wedding favors, a welcome sign, lounge seating and a seating chart">
-    </picture>
-  </div>
+              <picture>
+                <source type="image/webp" srcset="/img5-480.webp 480w, /img5-800.webp 800w, /img5.webp 1200w" sizes="(min-width: 1120px) 357px, (min-width: 768px) 31vw, 46vw">
+                <img src="/img5.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="Rustic barn reception with a table of cake-pop wedding favors, a welcome sign, lounge seating and a seating chart">
+              </picture>
+            </div>
             <div class="gallery-item">
-    <picture>
-      <source type="image/webp" srcset="img6-800.webp 800w, img6.webp 1200w" sizes="(min-width: 768px) 340px, calc(100vw - 3rem)">
-      <img src="img6.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="Round wooden moon-gate ceremony arch framed by ferns and woodland">
-    </picture>
-  </div>
+              <picture>
+                <source type="image/webp" srcset="/img6-480.webp 480w, /img6-800.webp 800w, /img6.webp 1200w" sizes="(min-width: 1120px) 357px, (min-width: 768px) 31vw, 46vw">
+                <img src="/img6.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="Round wooden moon-gate ceremony arch framed by ferns and woodland">
+              </picture>
+            </div>
             <div class="gallery-item">
-    <picture>
-      <source type="image/webp" srcset="img7-800.webp 800w, img7.webp 1200w" sizes="(min-width: 768px) 340px, calc(100vw - 3rem)">
-      <img src="img7.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="Bride's white pumps with ornate gold heels on autumn leaves">
-    </picture>
-  </div>
+              <picture>
+                <source type="image/webp" srcset="/img7-480.webp 480w, /img7-800.webp 800w, /img7.webp 1200w" sizes="(min-width: 1120px) 357px, (min-width: 768px) 31vw, 46vw">
+                <img src="/img7.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="Bride's white pumps with ornate gold heels on autumn leaves">
+              </picture>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- ABOUT SECTION -->
+      <!-- ABOUT -->
       <section id="about">
         <div class="container">
           <h2 class="section-title">About</h2>
           <p class="section-subtitle">
             Warm, personal, and present&mdash;think of me as the bridesmaid who always has a plan.
           </p>
-
-          <div class="about-inner">
-           <div class="about-photo">
-  <picture>
-    <source type="image/webp" srcset="img8-800.webp 800w, img8.webp 1200w" sizes="(min-width: 900px) 440px, calc(100vw - 3rem)">
-    <img src="img8.jpg" width="1200" height="900" loading="lazy" decoding="async" alt="Danielle, the wedding planner behind The Borrowed Bridesmaid, smiling on a wedding morning">
-  </picture>
-</div>
-
-            <div class="about-content">
-              <h3>Meet Danielle</h3>
+          <div class="about-story">
+            <h3>Meet Danielle</h3>
               <p>
                 Hi! I&rsquo;m Danielle—the planner behind <strong>The Borrowed Bridesmaid</strong>. I&rsquo;m based in Dallas, PA, and I created this business because I believe your wedding day should be filled with joy, presence, and the people you love&hellip; not logistics.
               </p>
@@ -391,17 +474,16 @@
               <p>
                 I work with couples throughout Northeast Pennsylvania and beyond, up to three hours from Scranton—including Philadelphia and New York City. Whether you&rsquo;re looking for full-service planning, day-of coordination, or help with all the pre-wedding festivities (like showers, bachelorette weekends, or your rehearsal dinner), I&rsquo;m here to make the entire process smooth, stress-free, and enjoyable.
               </p>
-              <p>
+              <p class="goal">
                 My goal?<br>
                 That you wake up on your wedding day feeling calm, excited, and completely cared for—because you deserve to be fully present for every moment you&rsquo;ll remember for the rest of your life.
               </p>
-            </div>
           </div>
         </div>
       </section>
 
-      <!-- WHERE I WORK SECTION -->
-      <section id="areas">
+      <!-- WHERE I WORK -->
+      <section id="areas" class="section-alt">
         <div class="container">
           <h2 class="section-title">Where I Work</h2>
           <p class="section-subtitle">
@@ -416,35 +498,14 @@
         </div>
       </section>
 
-      <!-- REVIEWS SECTION -->
-      <section id="reviews">
+      <!-- MORE REVIEWS -->
+      <section class="more-reviews">
         <div class="container">
-          <h2 class="section-title">Kind Words</h2>
+          <h2 class="section-title">More Kind Words</h2>
           <p class="section-subtitle">
             Reviews from couples on <a href="https://www.theknot.com/marketplace/the-borrowed-bridesmaid-dallas-pa-2048463" target="_blank" rel="noopener noreferrer">The Knot</a> and <a href="https://www.weddingwire.com/biz/the-borrowed-bridesmaid/c614060458a77a8a.html" target="_blank" rel="noopener noreferrer">WeddingWire</a>.
           </p>
-          <div class="reviews-grid">
-        <figure class="review-card">
-          <div class="review-stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <blockquote>
-            <p>&ldquo;Danielle is the wedding coordinator of your dreams! She worked so hard to ensure that our wedding day went according to plan. &hellip; Professional and kind, Danielle is there for you as the couple to make your wedding day for you. We appreciated her services so much!&rdquo;</p>
-          </blockquote>
-          <figcaption>Kerryn R. &middot; <a href="https://www.theknot.com/marketplace/the-borrowed-bridesmaid-dallas-pa-2048463" target="_blank" rel="noopener noreferrer">The Knot</a></figcaption>
-        </figure>
-        <figure class="review-card">
-          <div class="review-stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <blockquote>
-            <p>&ldquo;Danielle was absolutely wonderful to work with! She made my wedding day stress free and I&rsquo;m happy to say the day was a dream come true! I would recommend Danielle to anyone!&rdquo;</p>
-          </blockquote>
-          <figcaption>Micaela &middot; <a href="https://www.weddingwire.com/biz/the-borrowed-bridesmaid/c614060458a77a8a.html" target="_blank" rel="noopener noreferrer">WeddingWire</a></figcaption>
-        </figure>
-        <figure class="review-card">
-          <div class="review-stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
-          <blockquote>
-            <p>&ldquo;I can&rsquo;t begin to describe how grateful I am for Danielle and her organizational skills, especially on the day of our wedding! &hellip; Any time something even started to seem like it might go wrong, she was right there ready with a solution.&rdquo;</p>
-          </blockquote>
-          <figcaption>Emily &middot; <a href="https://www.weddingwire.com/biz/the-borrowed-bridesmaid/c614060458a77a8a.html" target="_blank" rel="noopener noreferrer">WeddingWire</a></figcaption>
-        </figure>
+          <div class="reviews-grid two">
         <figure class="review-card">
           <div class="review-stars" role="img" aria-label="5 out of 5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
           <blockquote>
@@ -463,8 +524,8 @@
         </div>
       </section>
 
-      <!-- FAQ SECTION -->
-      <section id="faq">
+      <!-- FAQ -->
+      <section id="faq" class="section-alt">
         <div class="container">
           <h2 class="section-title">Frequently Asked Questions</h2>
           <p class="section-subtitle">
@@ -503,8 +564,8 @@
         </div>
       </section>
 
-      <!-- CONTACT SECTION -->
-      <section id="contact" class="contact-section">
+      <!-- CONTACT -->
+      <section id="contact" class="contact-section" data-hide-cta>
   <div class="container">
     <div class="contact-container">
       <div class="contact-header">
@@ -550,7 +611,8 @@
 </section>
     </main>
 
-    <footer>
+    <footer data-hide-cta>
+      <p class="footer-brand">The Borrowed Bridesmaid</p>
       <p>
         <a href="/scranton-wedding-planner/">Scranton</a> &middot;
         <a href="/wilkes-barre-wedding-planner/">Wilkes-Barre &amp; the Back Mountain</a> &middot;
@@ -568,6 +630,9 @@
         <a href="mailto:theborrowedbridesmaid@gmail.com">theborrowedbridesmaid@gmail.com</a>
       </p>
     </footer>
+    <div class="mobile-cta">
+      <a class="btn-primary" href="#contact">Inquire About Your Date</a>
+    </div>
   </div>
 </body>
 </html>

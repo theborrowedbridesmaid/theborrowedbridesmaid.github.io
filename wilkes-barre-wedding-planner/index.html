@@ -11,7 +11,7 @@
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta name="theme-color" content="#B57BC6">
+  <meta name="theme-color" content="#6D3B5F">
 
   <!-- Social sharing -->
   <meta property="og:type" content="article">
@@ -27,13 +27,14 @@
   <meta name="twitter:description" content="Wedding planning and day-of coordination in Wilkes-Barre, Dallas and the Back Mountain (Luzerne County, PA), with venue notes and planning tips.">
   <meta name="twitter:image" content="https://theborrowedbridesmaid.org/og-image.jpg">
 
-  <!-- Google Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Lora:wght@400;500;600&family=Playfair+Display:wght@500;600;700&display=swap"></noscript>
+  <!-- Fonts (self-hosted) -->
+  <link rel="preload" href="/fonts/playfair-display-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/lora-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/fonts/great-vibes-latin.woff2" as="font" type="font/woff2" crossorigin>
 
+  <script>document.documentElement.classList.add('js')</script>
   <link rel="stylesheet" href="/styles.css">
+  <script src="/site.js" defer></script>
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -57,23 +58,32 @@
 </head>
 <body>
   <div class="page-wrap">
-    <header class="hero hero-sub" id="top">
-      <div class="container">
-        <div class="hero-inner">
-          <a class="logo-link" href="/"><span class="logo-text">The Borrowed Bridesmaid</span></a>
-          <p class="hero-subbrand">Wedding Planning &amp; Coordination</p>
-          <h1 class="page-title">Wedding Planner in Wilkes-Barre &amp; the Back Mountain</h1>
-          <nav class="hero-nav" aria-label="Main">
-            <a href="/#packages" class="hero-button">Packages</a>
-            <a href="/nepa-wedding-venues/" class="hero-button">Venue Guide</a>
-            <a href="/#faq" class="hero-button">FAQ</a>
-            <a href="/#contact" class="hero-button">Contact</a>
-          </nav>
-        </div>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" id="top">
+      <div class="container header-inner">
+        <a class="brand" href="/">The Borrowed Bridesmaid</a>
+        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu">&#9776;</button>
+        <nav class="site-nav" id="site-nav" aria-label="Main">
+          <ul>
+            <li><a href="/#packages">Packages</a></li>
+            <li><a href="/#gallery">Gallery</a></li>
+            <li><a href="/#about">About</a></li>
+            <li><a href="/#reviews">Reviews</a></li>
+            <li><a href="/#faq">FAQ</a></li>
+            <li><a href="/nepa-wedding-venues/">Venue Guide</a></li>
+            <li><a class="nav-cta" href="#contact">Inquire</a></li>
+          </ul>
+        </nav>
       </div>
     </header>
 
-    <main>
+    <main id="main">
+      <section class="page-intro">
+        <div class="container">
+          <p class="eyebrow">Wedding Planning &amp; Coordination</p>
+          <h1 class="page-title">Wedding Planner in Wilkes-Barre &amp; the Back Mountain</h1>
+        </div>
+      </section>
       <section class="page-section">
         <div class="container">
           <div class="prose">
@@ -201,7 +211,7 @@
         </div>
       </section>
 
-      <section class="cta-band">
+      <section class="cta-band" id="contact" data-hide-cta>
         <div class="container">
           <div class="cta-inner">
             <h2 class="section-title">Let&rsquo;s Talk About Your Day</h2>
@@ -215,7 +225,8 @@
       </section>
     </main>
 
-    <footer>
+    <footer data-hide-cta>
+      <p class="footer-brand">The Borrowed Bridesmaid</p>
       <p>
         <a href="/scranton-wedding-planner/">Scranton</a> &middot;
         <a href="/wilkes-barre-wedding-planner/">Wilkes-Barre &amp; the Back Mountain</a> &middot;
@@ -233,6 +244,9 @@
         <a href="mailto:theborrowedbridesmaid@gmail.com">theborrowedbridesmaid@gmail.com</a>
       </p>
     </footer>
+    <div class="mobile-cta">
+      <a class="btn-primary" href="#contact">Inquire About Your Date</a>
+    </div>
   </div>
 </body>
 </html>
