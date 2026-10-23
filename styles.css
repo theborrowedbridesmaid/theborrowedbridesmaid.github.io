@@ -700,6 +700,7 @@ footer a:hover {
 .prose p a,
 .prose li a,
 .venue-source a,
+.review-card figcaption a,
 footer a {
   text-decoration: underline;
   text-underline-offset: 2px;
