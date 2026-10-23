@@ -3,6 +3,7 @@
   --bg-cream: #FFF9F5;
   --text-main: #333333;
   --accent-purple: #B57BC6;
+  --accent-purple-text: #8A4F9E; /* darker shade for readable link text */
   --accent-pink: #F59BB0;
   --accent-green: #7BA184;
   --card-bg: #ffffff;
@@ -86,6 +87,7 @@ main {
 
 .logo-text {
   font-family: "Great Vibes", cursive;
+  line-height: 1.2;
   font-size: 2.8rem;
   font-weight: 700;
   margin: 0 0 0.3rem;
@@ -391,7 +393,7 @@ section {
 }
 
 .contact-info a {
-  color: var(--accent-purple);
+  color: var(--accent-purple-text);
   text-decoration: none;
 }
 
@@ -440,7 +442,7 @@ footer {
 }
 
 footer a {
-  color: var(--accent-purple);
+  color: var(--accent-purple-text);
   text-decoration: none;
 }
 
@@ -450,7 +452,7 @@ footer a:hover {
 
 /* REVIEWS */
 .section-subtitle a {
-  color: var(--accent-purple);
+  color: var(--accent-purple-text);
 }
 
 .reviews-grid {
@@ -496,7 +498,7 @@ footer a:hover {
 }
 
 .review-card figcaption a {
-  color: var(--accent-purple);
+  color: var(--accent-purple-text);
   text-decoration: none;
 }
 
@@ -507,7 +509,7 @@ footer a:hover {
 
 .btn-light {
   background: #fff;
-  color: var(--accent-purple);
+  color: var(--accent-purple-text);
   border: 1px solid rgba(181,123,198,0.45);
 }
 
@@ -571,6 +573,7 @@ footer a:hover {
 
 .logo-link .logo-text {
   display: block;
+  height: 3.4rem; /* fixed line box so the script font loading in doesn't shift the page */
 }
 
 .page-title {
@@ -613,7 +616,7 @@ footer a:hover {
 
 .prose a,
 .venue-card a {
-  color: var(--accent-purple);
+  color: var(--accent-purple-text);
 }
 
 .service-grid,
@@ -690,4 +693,27 @@ footer a:hover {
 
 .cta-inner .section-subtitle {
   margin-bottom: 1.4rem;
+}
+
+/* Underline links that sit inside running text */
+.section-subtitle a,
+.prose p a,
+.prose li a,
+.venue-source a,
+footer a {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* Subpage nav: fixed 2x2 grid on phones so buttons don't re-wrap as fonts load */
+@media (max-width: 599px) {
+  .hero-sub .hero-nav {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .hero-sub .hero-button {
+    text-align: center;
+    padding-left: 0.8rem;
+    padding-right: 0.8rem;
+  }
 }
